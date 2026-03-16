@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaSwap · multilingual translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="translator-card">
+        <div class="header">
+            <h1> LANGUAGE TRANSLATOR</h1>
+            <button class="mode-toggle" id="darkModeToggle">🌙 Dark mode</button>
+        </div>
+
+        <div class="translation-panels">
+            <!-- SOURCE PANEL -->
+            <div class="panel">
+                <div class="panel-header">
+                    <select id="sourceLang">
+                        <option value="auto">🔍 Detect language</option>
+                        <option value="en" selected>🇬🇧 English</option>
+                        <option value="fr">🇫🇷 French</option>
+                    </select>
+                    <span class="char-count" id="sourceCount">0 / 500</span>
+                </div>
+                <textarea id="inputText" placeholder="Type or paste text...">Hello, how are you</textarea>
+                <div class="action-row">
+                    <button class="icon-btn" id="copySourceBtn" title="Copy original">📋 Copy</button>
+                    <button class="icon-btn" id="speakSourceBtn" title="Listen original">🔊 Speak</button>
+                </div>
+            </div>
+
+            <!-- SWAP BUTTON -->
+            <button class="swap-btn" id="swapLangBtn" title="Swap languages">⇄</button>
+
+            <!-- TARGET PANEL -->
+            <div class="panel">
+                <div class="panel-header">
+                    <select id="targetLang">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="fr" selected>🇫🇷 French</option>
+                    </select>
+                </div>
+                <textarea id="outputText" readonly placeholder="Translation appears here"></textarea>
+                <div class="action-row">
+                    <button class="icon-btn" id="copyTargetBtn" title="Copy translation">📋 Copy</button>
+                    <button class="icon-btn" id="speakTargetBtn" title="Listen translation">🔊 Speak</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSLATE BUTTON & STATUS -->
+        <div class="status-area">
+            <div id="loadingIndicator" style="display: flex; align-items: center; gap: 0.6rem;">
+                <span class="loader" id="loader" style="display: none;"></span>
+                <span id="statusMessage"></span>
+            </div>
+            <button class="translate-btn" id="translateBtn">✨ Translate</button>
+        </div>
+        <div id="errorBox" class="error-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
